@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     let email = this.form.get('email').value;
     let senha = this.form.get('senha').value;
     this.usuarioService.logar(email,senha).subscribe((user:Usuario)=>{
-      if (user == null){
+      if (user != null){
         localStorage.setItem('usuario',JSON.stringify(user));
         this.router.navigate(['principal']);
       }else {

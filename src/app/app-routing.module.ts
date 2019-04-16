@@ -12,7 +12,7 @@ const routes: Routes = [
     component:LoginComponent 
   },
   {
-    path:'web',
+    path:'principal',
     component:PrincipalComponent,
     children:[
         
