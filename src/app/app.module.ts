@@ -4,7 +4,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule, MatCardModule, MatToolbarModule, MatSidenavModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatMenuModule, MatIconModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
@@ -25,7 +25,7 @@ import { PrincipalComponent } from './pages/principal/principal.component';
     MatInputModule, MatFormFieldModule,
     MatCardModule,HttpClientModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule, MatMenuModule,MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

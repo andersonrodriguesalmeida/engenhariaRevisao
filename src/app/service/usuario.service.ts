@@ -21,7 +21,7 @@ export class UsuarioService {
       email:email,
       senha:senha
     };
-    const url = 'http://localhost:8080/Revisao/rest/usuario/logar';
+    const url = 'http://192.168.201.31:8080/Revisao/rest/usuario/logar';
     return this.http.post<Usuario>(url, user);
 
   }
