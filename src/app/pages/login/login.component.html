@@ -1,13 +1,13 @@
 <div class="div-login">
-  <form [formGroup]="form">
+  <form [formGroup]="form" fxLayout="column">
     <div class="div-titulo"><h1>Sistema de Gestão</h1></div>
-    <div fxLayout="row">
-        <mat-form-field>
+    <div fxLayout="row" fxFlex>
+        <mat-form-field fxFlex>
           <input matInput placeholder="E-mail" formControlName="email">
         </mat-form-field>
     </div>
-    <div fxLayout="row">
-        <mat-form-field>
+    <div fxLayout="row" fxFlex>
+        <mat-form-field fxFlex>
           <input matInput placeholder="Senha" formControlName="senha">
           <mat-error>Login ou senha inválido!</mat-error>
         </mat-form-field>
