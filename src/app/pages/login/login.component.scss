@@ -1,0 +1,29 @@
+
+/**
+Classe Css para deixar a div de login no centro da tela
+*/
+.div-login {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+}
+/*Classe para deixar o botão colorido */
+.btn-logar {
+    background: #389ece;
+}
+/*alterando um propriedade do componente imput para ele ocupar toda 
+a area disponivel*/
+mat-form-field {
+    display: block !important;
+}
+/*Definindo que a div deve ocupar toda a largura e deixando o
+ componentes de dentro ao centro da DIV*/
+.div-titulo {
+    width: 100%;
+    text-align: center;
+}
