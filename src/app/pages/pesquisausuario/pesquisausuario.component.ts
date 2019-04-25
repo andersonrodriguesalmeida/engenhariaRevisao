@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/model/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pesquisausuario',
@@ -18,14 +19,16 @@ export class PesquisaUsuarioComponent implements OnInit {
   public initialSelection = [];
   public allowMultiSelect = true;
   public selection = new SelectionModel<Usuario>(this.allowMultiSelect, this.initialSelection);
-  
+  public form:FormGroup;
+
   constructor(private usuarioService:UsuarioService, 
     private route:Router) { }
 
   ngOnInit() {
-    this.usuarioService.pesquisar('').subscribe( (lista) => {
-      this.dataSource = new MatTableDataSource(lista);
-    })
+    this.form = new FormGroup({
+      nome:new FormControl()
+    });
+    this.pesquisar('');
   }
 
   isAllSelected() {
@@ -55,7 +58,20 @@ export class PesquisaUsuarioComponent implements OnInit {
   }
 
   public excluir(){
+    if (this.selection.isEmpty()){
+      alert('Favor selecionar um usuário');
+      return;
+    }
+    let id = this.selection.selected[0].id;
+    this.usuarioService.excluir(id).subscribe( (res) => {
+      this.pesquisar('');
+    })
+  }
 
+  public pesquisar(nome:string){
+    this.usuarioService.pesquisar(nome).subscribe( (lista) => {
+      this.dataSource = new MatTableDataSource(lista);
+    })
   }
 
 }

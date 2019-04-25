@@ -45,7 +45,9 @@ export class CadUsuarioComponent implements OnInit {
     if (this.form.invalid){
       return;
     }
-    this.usuario = new Usuario();
+    if (this.usuario == null){
+      this.usuario = new Usuario();
+    }
     this.usuario.nome = this.form.get('nome').value;
     this.usuario.email = this.form.get('email').value;
     this.usuario.senha = this.form.get('senha').value; 

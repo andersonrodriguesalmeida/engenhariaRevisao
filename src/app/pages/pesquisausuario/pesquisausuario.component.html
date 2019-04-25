@@ -2,7 +2,12 @@
   <mat-card-title>
     Usuários do Sistema
   </mat-card-title>
-  <mat-card-content>
+  <mat-card-content fxLayout="column">
+    <form [formGroup]="form" fxLayout="row">
+        <mat-form-field fxFlex>
+          <input matInput placeholder="Pesquisar" #inputNome formControlName="nome" (ngModelChange)="pesquisar(inputNome.value)">
+        </mat-form-field>
+    </form>
     <table mat-table [dataSource]="dataSource" class="tbl-pesquisa">
 
       <!--- Note that these columns can be defined in any order.

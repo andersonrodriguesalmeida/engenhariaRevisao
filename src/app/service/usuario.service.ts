@@ -41,4 +41,9 @@ export class UsuarioService {
     const url = 'http://192.168.201.5:8080/Revisao/rest/usuario/'+id;
     return this.http.get<Usuario>(url);
   }
+
+  public excluir(id:number):Observable<any> {
+    const url = 'http://192.168.201.5:8080/Revisao/rest/usuario/'+id;
+    return this.http.delete(url);
+  }
 }
