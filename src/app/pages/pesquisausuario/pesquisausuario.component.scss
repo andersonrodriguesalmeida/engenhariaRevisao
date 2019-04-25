@@ -1,0 +1,21 @@
+.pesquisa-usuario {
+    display: flex;
+    flex-direction: column !important;
+    padding-top: 1px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    .tbl-pesquisa {
+        width: 100%;
+    }
+
+    mat-card-content {
+        height: 100%;
+    }
+
+    mat-card-actions {
+        text-align: center;
+    }
+}

@@ -4,21 +4,21 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatMenuModule, MatIconModule, MatExpansionModule, MatListModule, MatSnackBarModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatMenuModule, MatIconModule, MatExpansionModule, MatListModule, MatSnackBarModule, MatTableModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { CadUsuarioComponent } from './pages/cadusuario/cadusuario.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { PesquisausuarioComponent } from './pages/pesquisausuario/pesquisausuario.component';
+import { PesquisaUsuarioComponent } from './pages/pesquisausuario/pesquisausuario.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PrincipalComponent,
     CadUsuarioComponent,
-    PesquisausuarioComponent
+    PesquisaUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +31,7 @@ import { PesquisausuarioComponent } from './pages/pesquisausuario/pesquisausuari
     MatToolbarModule,
     MatSidenavModule, MatMenuModule,MatIconModule,
     MatExpansionModule, MatListModule, FlexLayoutModule,
-    MatSnackBarModule
+    MatSnackBarModule,MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

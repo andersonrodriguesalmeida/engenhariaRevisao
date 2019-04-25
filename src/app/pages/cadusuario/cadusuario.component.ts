@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Usuario } from 'src/app/model/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { MatSnackBar } from '@angular/material';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cadusuario',
@@ -16,7 +17,9 @@ export class CadUsuarioComponent implements OnInit {
   public usuario:Usuario;
 
   constructor(private usuarioService:UsuarioService,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    private router:Router, 
+    private route:ActivatedRoute) { }
 
   ngOnInit() {
     /**
@@ -28,6 +31,14 @@ export class CadUsuarioComponent implements OnInit {
       email:new FormControl(),
       senha:new FormControl()
     })
+    let id = this.route.snapshot.params.id;
+    if (id != null){
+      this.usuarioService.buscarPorId(id).subscribe((user)=> {
+        this.usuario = user;
+        this.form.patchValue(this.usuario);
+      })
+    }
+
   }
 
   public salvar(){
